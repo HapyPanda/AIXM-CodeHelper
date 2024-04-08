@@ -1,0 +1,41 @@
+# --------- Train ---------- #
+gpus : "1,2"
+output_dir : "./exp/vqvae2"
+logging_dir : "logging"
+seed : 42
+
+max_train_steps : 100000
+num_train_epochs : 50
+
+checkpointing_steps : 50
+checkpoint_num_limit : 2
+
+# <accelerator>
+gradient_accumulation_steps : 1
+mixed_precision : "no" # ‘no’,‘fp16’,‘bf16 or ‘fp8’.
+log_with : "tensorboard" # "all" "tensorboard" "wandb"
+
+# <optimizer>
+lr : 0.0002
+lr_scheduler : "cosine" # "linear","cosine","cosine_with_restarts","polynomial","constant","constant_with_warmup","piecewise_constant"
+lr_warmup_steps : 10
+max_grad_norm : 1.0
+
+
+# --------- Data ---------- #
+datadir_train : "/mnt/lpai-dione/ssai/cvg/team/didonglin/zqy/practice/Video-VQVAE/data/UCF-101"
+datadir_val : "/mnt/lpai-dione/ssai/cvg/team/didonglin/zqy/practice/Video-VQVAE/data/UCF-101/BasketballDunk"
+dataloader_num_workers : 10
+sequence_lenth : 32
+batch_size : 8
+
+# --------- Model ---------- #
+embedding_dim : 4
+n_codes : 2048
+n_hiddens : 240
+downsample : [4,4,4]
+resolution : 256
+n_res_layers : 4
+
+
+
