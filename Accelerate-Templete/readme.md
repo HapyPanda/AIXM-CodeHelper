@@ -1,0 +1,1 @@
+Accelerate 是Huggingface的分布式训练库，大家主要看train.py，这个文件中包含了写一个Accelerate训练流程的标准模版。
