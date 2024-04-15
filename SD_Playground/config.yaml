@@ -1,0 +1,7 @@
+local_dir : "./cached"
+repo_id : "runwayml/stable-diffusion-v1-5"
+weights_dtype : "fp16"
+proxies : 
+  https: https://hf-mirror.com/
+dataset : 
+  CelebA : 'E:\AIGC\VDM\dataset' #your own dataset
